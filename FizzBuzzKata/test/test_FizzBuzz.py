@@ -20,3 +20,8 @@ class TestFizzBuzz(TestCase):
     def test_should_print_buzz_on_multiples_of_five(self):
         output = self.__fizz_buzz.evaluate_number(5)
         self.assertEqual(self.BUZZ, output)
+
+    def test_should_print_number_on_non_multiple_of_five_or_three(self):
+        non_multiple_of_five_or_three = 11
+        output = self.__fizz_buzz.evaluate_number(non_multiple_of_five_or_three)
+        self.assertEqual(non_multiple_of_five_or_three, output)
