@@ -8,4 +8,4 @@ class FizzBuzz:
         if number % 5 == 0:
             return "Buzz"
         else:
-            return str(number)
+            return number
