@@ -6,7 +6,7 @@ class FizzBuzz:
     def evaluate_number(self, number):
         if self.__is_multiple_of_three_and_five(number):
             return self.FIZZ+self.BUZZ
-        elif self.__is_multiple_of_three(number):
+        elif self.__is_multiple_of_three(number) | 0 <= str(number).find(str(3)):
             return self.FIZZ
         elif self.__is_multiple_of_five(number):
             return self.BUZZ
