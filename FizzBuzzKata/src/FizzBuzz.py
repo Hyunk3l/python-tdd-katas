@@ -4,9 +4,11 @@ class FizzBuzz:
     BUZZ = "Buzz"
 
     def evaluate_number(self, number):
-        if self.__is_multiple_of_three(number):
+        if self.__is_multiple_of_three(number) & self.__is_multiple_of_five(number):
+            return self.FIZZ+self.BUZZ
+        elif self.__is_multiple_of_three(number):
             return self.FIZZ
-        if self.__is_multiple_of_five(number):
+        elif self.__is_multiple_of_five(number):
             return self.BUZZ
         else:
             return number
