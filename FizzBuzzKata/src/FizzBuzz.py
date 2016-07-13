@@ -8,7 +8,7 @@ class FizzBuzz:
             return self.FIZZ+self.BUZZ
         elif self.__is_multiple_of_three(number) | self.__has_number_a_three(number):
             return self.FIZZ
-        elif self.__is_multiple_of_five(number):
+        elif self.__is_multiple_of_five(number) | self.__has_number_a_five(number):
             return self.BUZZ
         else:
             return number
@@ -24,3 +24,6 @@ class FizzBuzz:
 
     def __has_number_a_three(self, number):
         return 0 <= str(number).find(str(3))
+
+    def __has_number_a_five(self, number):
+        return 0 <= str(number).find(str(5))
