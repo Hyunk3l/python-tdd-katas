@@ -1,4 +1,8 @@
-# python-tdd-katas
+# Python TDD Katas
+
+## Description
+This repo is for teaching purposes.
+Each week we are going to pick a Kata from [CodingDojo's KataCatalogue](http://codingdojo.org/cgi-bin/index.pl?KataCatalogue) and execute it.
 
 ## Requirements
 
