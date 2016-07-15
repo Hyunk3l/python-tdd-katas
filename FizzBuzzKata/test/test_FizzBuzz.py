@@ -37,3 +37,7 @@ class TestFizzBuzz(TestCase):
     def test_should_print_buzz_if_has_a_five(self):
         output = self.__fizz_buzz.evaluate_number(52)
         self.assertEqual(self.BUZZ, output)
+
+    def test_should_print_fizzbuzz_if_has_a_five_and_is_multiple_of_three(self):
+        output = self.__fizz_buzz.evaluate_number(51)
+        self.assertEqual(self.FIZZ+self.BUZZ, output)

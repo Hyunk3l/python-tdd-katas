@@ -4,7 +4,7 @@ class FizzBuzz:
     BUZZ = "Buzz"
 
     def evaluate_number(self, number):
-        if self.__is_multiple_of_three_and_five(number):
+        if self.__is_fizzbuzzable(number):
             return self.FIZZ + self.BUZZ
         elif self.__is_fuzzable(number):
             return self.FIZZ
@@ -19,8 +19,8 @@ class FizzBuzz:
     def __is_buzzable(self, number):
         return self.__is_multiple_of_five(number) | self.__has_number_a_five(number)
 
-    def __is_multiple_of_three_and_five(self, number):
-        return self.__is_multiple_of_three(number) & self.__is_multiple_of_five(number)
+    def __is_fizzbuzzable(self, number):
+        return self.__is_fuzzable(number) and self.__is_buzzable(number)
 
     def __is_multiple_of_three(self, number):
         return number % 3 == 0
