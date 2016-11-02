@@ -8,3 +8,17 @@ class TestBowling(TestCase):
         bowling = Bowling()
         bowling.roll(10)
         self.assertEqual(10, bowling.getScore())
+
+    def test_should_get_perfect_score(self):
+        bowling = Bowling()
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        bowling.roll(10)
+        self.assertEquals(300, bowling.getScore())
