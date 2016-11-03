@@ -91,3 +91,12 @@ class TestBowling(TestCase):
         self.bowling.roll(5, 3)
 
         self.assertEqual(75, self.bowling.get_score())
+
+    def test_should_get_score_with_two_frames_with_strike_and_rolls(self):
+        # Frame 1.
+        self.bowling.roll(self.STRIKE)
+
+        # Frame 2.
+        self.bowling.roll(4, 4)
+
+        self.assertEqual(26, self.bowling.get_score())
