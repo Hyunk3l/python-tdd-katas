@@ -10,8 +10,9 @@ class Bowling:
     def __init__(self):
         self.__rolls = []
 
-    def roll(self, score):
-        self.__rolls.append(score)
+    def roll(self, *args):
+        for score in args:
+            self.__rolls.append(score)
 
     def get_score(self):
         total_score = 0
