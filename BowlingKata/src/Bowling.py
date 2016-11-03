@@ -23,11 +23,11 @@ class Bowling:
         for index, roll in enumerate(self.__rolls):
             if self.__is_third_strike(index):
                 total_score += self.MULTIPLE_STRIKES_SCORE
-            elif self.STRIKE == roll and self.__is_next_roll_strike(index):
+            elif self.__is_strike(roll) and self.__is_next_roll_strike(index):
                 continue
-            elif self.SPARE == roll:
+            elif self.__is_spare(roll):
                 continue
-            elif index-1 >= 0 and self.SPARE == self.__rolls[index-1]:
+            elif self.__is_previous_roll_spare(index):
                 total_score += roll + self.SPARE_POINTS
             else:
                 total_score += roll
@@ -42,3 +42,12 @@ class Bowling:
 
     def __is_next_roll_strike(self, index):
         return index+1 <= len(self.__rolls) and self.__rolls[index+1] == self.STRIKE
+
+    def __is_strike(self, roll):
+        return self.STRIKE == roll
+
+    def __is_spare(self, roll):
+        return self.SPARE == roll
+
+    def __is_previous_roll_spare(self, index):
+        return index-1 >= 0 and self.SPARE == self.__rolls[index-1]
