@@ -3,6 +3,10 @@ class Bowling:
 
     STRIKE = "X"
 
+    SPARE = "/"
+
+    SPARE_POINTS = 10
+
     MULTIPLE_STRIKES_SCORE = 30
 
     __rolls = None
@@ -21,6 +25,10 @@ class Bowling:
                 total_score += self.MULTIPLE_STRIKES_SCORE
             elif self.STRIKE == roll and self.__is_next_roll_strike(index):
                 continue
+            elif self.SPARE == roll:
+                continue
+            elif index-1 >= 0 and self.SPARE == self.__rolls[index-1]:
+                total_score += roll + self.SPARE_POINTS
             else:
                 total_score += roll
         return total_score
